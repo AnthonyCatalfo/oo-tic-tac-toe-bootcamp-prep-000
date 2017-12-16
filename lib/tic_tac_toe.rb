@@ -25,7 +25,7 @@ def input_to_index(user_input)
 end
  def move(array,index,value)
     array[index] = value
-end 
+end
   def position_taken?(board, index)
   !(board[index].nil? || board[index] == " ")
 end
@@ -93,10 +93,5 @@ def winner(board)
    puts  "Cat's Game!"
  end
  end
- 
 
-
-
-
-
- 
+end
