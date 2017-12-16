@@ -1,5 +1,5 @@
 class TicTacToe
-
+attr_accessor :board
 def position_taken?(index)
   !(@board[index].nil? || @board[index] == " ")
 end
