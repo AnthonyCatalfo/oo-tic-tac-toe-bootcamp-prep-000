@@ -20,7 +20,7 @@ WIN_COMBINATIONS = [
 def won?
 WIN_COMBINATIONS.detect do |j|
 
-   (@board[j[0]] === @board[j[1]] && @board[j[1]]===@board[j[2]]) && (position_taken?(@board,j[0] ))
+   (@board[j[0]] === @board[j[1]] && @board[j[1]]===@board[j[2]]) && (position_taken?(j[0] ))
 
 end
 end
@@ -31,14 +31,14 @@ def full?
       return true
    end
 def draw?
-  return ! won?(@board) && full?(@board)
+  return ! won?() && full?()
 end
 def over?
-  return  won?(@board) || full?(@board) || draw?(@board)
+  return  won?() || full?() || draw?()
 end
 def winner
-  if won?(@board) != nil
-    win=won?(@board)
+  if won?() != nil
+    win=won?()
 
     return @board[win[0]]
   end
@@ -71,9 +71,9 @@ def turn
   while  true
    puts "Please enter 1-9:"
    index=input_to_index(gets)
-    if valid_move?(@board,index)
-       move(@board, index, current_player(@board))
-       display_board(@board)
+    if valid_move?(index)
+       move(index, current_player())
+       display_board()
        return
     end
   end
@@ -83,19 +83,19 @@ def turn_count
    return arr.length
  end
  def current_player
-   if  turn_count(@board) % 2===0
+   if  turn_count() % 2===0
      return "X"
    end
    return "O"
  end
  def play
-  while ! over?(@board)
-    turn(@board)
+  while ! over?()
+    turn()
   end
-  if  won?(@board)
-  puts "Congratulations #{winner(@board)}!"
+  if  won?()
+  puts "Congratulations #{winner()}!"
   end
-  if  draw?(@board)
+  if  draw?()
    puts  "Cat's Game!"
  end
  end
