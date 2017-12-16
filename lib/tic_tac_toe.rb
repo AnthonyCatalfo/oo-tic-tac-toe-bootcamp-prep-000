@@ -31,14 +31,14 @@ def full?
       return true
    end
 def draw?
-  return ! won?() && full?()
+  return ! won? && full?
 end
 def over?
-  return  won?() || full?() || draw?()
+  return  won? || full? || draw?
 end
 def winner
-  if won?() != nil
-    win=won?()
+  if won? != nil
+    win=won?
 
     return @board[win[0]]
   end
@@ -63,8 +63,8 @@ def winner
 
 end
 
-def move(array,index,value)
-  array[index] = value
+def move(index,value)
+  @board[index] = value
 end
 
 def turn
@@ -72,7 +72,7 @@ def turn
    puts "Please enter 1-9:"
    index=input_to_index(gets)
     if valid_move?(index)
-       move(index, current_player())
+       move(index, current_player)
        display_board()
        return
     end
