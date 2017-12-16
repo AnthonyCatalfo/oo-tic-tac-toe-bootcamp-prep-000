@@ -34,6 +34,7 @@ def valid_move?(board,index)
     return true
   else return false
 end
+end
 def turn(board)
   while  true
    puts "Please enter 1-9:"
