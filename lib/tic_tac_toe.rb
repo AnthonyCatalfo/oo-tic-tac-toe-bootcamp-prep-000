@@ -8,7 +8,7 @@ class TicTacToe
    def board=(board)
     @board = board
     end
-   end
+   
 
 
   WIN_COMBINATIONS = [
