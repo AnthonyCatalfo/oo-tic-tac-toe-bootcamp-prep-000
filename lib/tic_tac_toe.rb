@@ -5,11 +5,7 @@ class TicTacToe
   def board
    @board
    end
-   def board=(board)
-    @board = board
-    end
-end
-
+   
 
   WIN_COMBINATIONS = [
   [0,1,2], # Top row
